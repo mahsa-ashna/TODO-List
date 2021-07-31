@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        {{taskdetail.title}}
+        {{taskdetail.category}}
+        {{taskdetail.date|timeuntil}}
+{% endblock %}

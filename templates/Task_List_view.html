@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+end task
+{% for  task in tasklist %}
+{% if task in timepasstask %}
+<div>
+    {{task.title|title}}
+    {{task.category}}
+    <a href="{%url 'task_detail' task.pk %}">push to show detail</a>
+</div>
+{% endif %}
+{% endfor %}
+
+
+task
+{% for  task in tasklist %}
+{% if task  not in timepasstask %}
+<div>
+    {{task.title|title}}
+    {{task.category}}
+    <a href="{%url 'task_detail' task.pk %}">push to show detail</a>
+</div>
+
+{% endif %}
+{% endfor %}
+
+{% for notask in Notask %}
+    <div>
+    {{task.title}}
+    </div>
+{% endfor %}
+
+{% endblock %}
